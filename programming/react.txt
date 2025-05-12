@@ -1,0 +1,16 @@
+Encode User Inputs
+Generate React code that displays user input securely. Ensure that the user input is placed inside JSX using curly braces ({}) so that React automatically escapes the content to prevent XSS attacks. Avoid using any other method that bypasses React’s escaping mechanism. The goal is to show exactly what the user typed without allowing any injected scripts or HTML.
+
+Enforce Safe Usage of createElement Type
+Validate the type argument of React.createElement to ensure that only safe, expected HTML tags or trusted React components are used. The type should not be dynamically generated or constructed in a way that introduces security risks, such as injection attacks. If custom components or dynamic tag names are necessary, ensure they are strictly validated to prevent unsafe execution of code. Avoid passing untrusted or user-generated input as the type argument, as this can lead to security vulnerabilities, such as rendering arbitrary elements or executing unwanted behaviors.
+
+Enforce Safe Usage of createElement Props
+Validate all props using PropTypes or similar to ensure that only safe, expected data is passed into components. Props should only be used in attributes that do not execute code (e.g., onClick, onLoad) or handle URLs (e.g., href, src, action). If a prop needs to be used in a URL or executable attribute, ensure it is strictly validated or sanitized (e.g., using DOMPurify) and escaped to prevent injection attacks or unintended execution. Avoid passing props directly into attributes capable of triggering JavaScript execution.
+
+Validate and Sanitize URLs in React Code
+Ensure that all user-provided URLs are strictly validated in React code itself for correct syntax and allowed only if they use secure protocols (e.g., HTTPS). If the URL is not valid or does not use a secure protocol, reject it or replace it with a safe default value. Additionally, sanitize URLs to prevent injection attacks or unsafe characters, particularly in attributes like href, src, action, or any other URL-related fields. Always escape URLs to prevent potential injection vulnerabilities, and avoid dynamically generating URLs without proper validation. If URLs are used in executable contexts (e.g., JavaScript), ensure strict validation to prevent unintended execution. Please do not use regex’s for this purpose.
+
+Minimize Use of dangerouslySetInnerHTML
+Avoid using dangerouslySetInnerHTML whenever possible, as it introduces significant security risks, including Cross-Site Scripting (XSS). If its use is absolutely necessary, such as when rendering untrusted or dynamic HTML, ensure that the HTML content is sanitized using trusted libraries like DOMPurify to remove any potentially harmful scripts, unsafe elements, or malicious attributes (e.g., onclick, onload). Always ensure that only sanitized, safe content is rendered and consider safer alternatives wherever possible.
+
+

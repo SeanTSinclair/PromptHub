@@ -1,0 +1,23 @@
+AI Assisted Secure %Technology% Development Guidelines
+
+=== Code Quality & Design === 
+Maintain Low Cyclomatic Complexity: Write code that has low cyclomatic complexity to ensure it is easy to understand, test, and maintain, reducing the chance of introducing bugs.
+
+Minimize Cognitive Complexity: Reduce the mental overhead required to understand the code by writing clear, concise and well-structured logic.
+
+Avoid Code Duplication: Reuse code effectively to prevent redundancy and inconsistent behavior, promoting DRY (Don't Repeat Yourself) principles.
+
+High Cohesion: Ensure that components, modules and functions are logically grouped, making hte codebase easier to maintain and extend. 
+
+Loose Coupling: Build components and modules that are independent of each other to increase flexibility and ease of future change.
+
+Use Clear Naming Conventions: Adopt meaningful, consistent, and descriptive naming conventions for variables, functions and classes to improve readability.
+
+Follow Proper Component Design: Keep components small and focused, adhering to the Single Responsibility Principle (SRP) to enhance maintainability and testability.
+
+Ensure Accessibility: Develop components with accessibility in mind, follow WCAG to create an inclusive experience for all users. 
+
+Prefer Functional Components: Use functional components instead of class components for better readability, testability and performance. 
+
+=== Data Handling Security ===
+TODO: Add data handling rules
